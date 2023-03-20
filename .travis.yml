@@ -4,6 +4,11 @@ node_js:
 cache:
   directories:
     - node_modules
+before_install:
+  - npm install -g @lhci/cli@0.3.x
 script:
-  - yarn run test -u
-  - yarn run build
+  - npm run test -u
+  - npm run build
+  - lhci autorun
+addons:
+  chrome: stable
